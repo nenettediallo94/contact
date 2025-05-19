@@ -1,0 +1,36 @@
+body{
+display: block;
+margin-left: auto;
+margin-right: auto;
+background-color: rgb(88, 218, 146);
+}
+
+form{
+ align-content: center; 
+ margin-left: auto;  
+ margin-right: auto;
+}
+.forme{
+    text-align: center;
+}
+.nom{
+    padding: 10px;
+    width: 30%;
+    border-radius: 2%;
+}
+div{
+    text-align: center;
+}
+
+.bouton{
+    background-color: aqua;
+    color: blue;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.bouton :hover{
+    background-color: blue;
+}

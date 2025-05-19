@@ -1,0 +1,37 @@
+body{
+ background-color: aliceblue;
+}
+
+h1{
+    font-size: 50px;
+    justify-content: center;
+    text-align: center;
+}
+
+p1{
+    text-align: justify;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+table, th, td {
+    border: 1px solid black;
+    width: 600px;
+    height: 50px;
+    justify-content: center;
+    
+}
+
+
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul{
+    font-size: large;
+}
+blockquote{
+    font-size: large;
+}
