@@ -1,0 +1,334 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    line-height: 1.6;
+    background-color: #7aa093;
+    background-size: cover;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2, h3, h4 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+section {
+    padding: 60px 0;
+    border-bottom: 1px solid #eee;
+}
+
+
+.main-header {
+    background-color: #08202c;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 5px 0;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header .logo a {
+    font-size: 40px;
+    font-weight: bold;
+    color: white; 
+    text-decoration: none;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: 25px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: white;
+}
+.histoire{
+    background-color: white;
+}
+
+
+.A-propos-de-nous-hero {
+       color: white;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+}
+
+.A-propos-de-nous-hero:before { 
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+.A-propos-de-nous-hero.container {
+    position: relative;
+    z-index: 1;
+    background-image: url(/site-de-voyage/plane_flying_over_water.webp);
+    background-color: #88b2da;
+}
+
+.A-propos-de-nous-hero h2 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.A-propos-de-nous-hero p {
+    font-size: 1.2em;
+    opacity: 0.9;
+
+}
+
+
+
+.A-propos-de-nous-intro {
+   background-image: url(plane_flying_over_water.webp);
+    background-color: #88b2da;
+    background-size: cover;
+}
+
+.A-propos-de-nous-intro .intro-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap; 
+}
+
+.A-propos-de-nous-intro .intro-image {
+    max-width: 50%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    flex-shrink: 0; 
+}
+
+.A-popos-de-nous-intro .intro-text {
+    flex: 1;
+    min-width: 300px; 
+}
+
+.about-intro .intro-text h3 {
+    text-align: left;
+    color: #ff7f50;
+    margin-bottom: 15px;
+}
+
+
+.mission-values {
+    background-color: #f0f3f2;
+}
+
+.mission-values h3 {
+    color: #333;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.value-item {
+    text-align: center;
+    background-color: #fff;
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.value-item i { 
+    font-size: 3em;
+    color: #ff7f50;
+    margin-bottom: 15px;
+    display: block; 
+}
+
+.value-item h4 {
+    margin-top: 0;
+    font-size: 1.3em;
+    color: #333;
+}
+
+.value-item p {
+    font-size: 0.95em;
+    color: #666;
+}
+.value-item-value-item-1 {
+    background-color: rgb(44, 103, 143);
+    border-radius: 30px;
+
+}
+.value-item-value-item-2 {
+    background-color: #23e2c2;
+    border-radius: 30px;
+}
+.value-item-value-item-3 {
+    background-color: #156fe4;
+    border-radius: 30px;
+}
+.value-item-value-item-4 {
+    background-color: #15b1e0;
+    border-radius: 30px;
+}
+
+
+.our-team {
+    background-color: #fff;
+}
+
+.our-team h3 {
+    color: #333;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.team-member {
+    text-align: center;
+    background-color: #88b2da;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; 
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #ff7f50;
+}
+
+.team-member h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.team-member p {
+    font-size: 0.9em;
+    color: #777;
+}
+
+.team-member .member-bio {
+    font-size: 0.85em;
+    color: #555;
+    margin-top: 10px;
+    min-height: 40px;
+}
+
+
+.main-footer {
+    background-color: #08202c;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.main-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #ff7f50;
+}
+
+
+@media (max-width: 768px) {
+    .about-intro .intro-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-intro .intro-image {
+        max-width: 80%; 
+        margin-bottom: 20px;
+    }
+
+    .about-intro .intro-text h3 {
+        text-align: center;
+    }
+
+    .values-grid, .team-grid {
+        grid-template-columns: 1fr; /* Une colonne sur les petits écrans */
+    }
+
+    .main-header .container, .main-footer .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .main-nav ul, .footer-nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

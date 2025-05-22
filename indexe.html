@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryama Voyages</title>
+    <link rel="stylesheet" href="indexe.css">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="istockphoto-1294467863-612x612.jpg" alt="Logo Ryama" style="height: 50px;">
+                <h1>Ryama Voyages</h1>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="/indexe.html">Accueil</a></li>
+                    <li><a href="A propos de nous.html">À propos</a></li>
+                    <li><a href="Destination.html">Destinations</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section>
+            <h2>Bienvenue chez Ryama Voyages</h2>
+            <p>Explorez le monde avec nos offres de voyage.</p>
+        </section>
+
+        <div class="search-bar-container">
+            <div class="search-fields">
+                <div class="search-input">
+                    <label for="destination">A destination de</label>
+                    <div class="input-with-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon">
+                            <path fill-rule="evenodd"
+                                d="M11.54 22.351l.07.04.028.016a.25.25 0 00.273 0l.028-.016.07-.041 9.136-5.157a.75.75 0 00-.686-1.166l-6.066.857a.75.75 0 00-.633.135l-.221.07a.75.75 0 01-.764 0l-.22-.07-.634-.136-6.065-.857a.75.75 0 00-.686 1.166l9.136 5.156zM12 16a4 4 0 100-8 4 4 0 000 8zm-3 12a9 9 0 1118 0 9 9 0 01-18 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <input type="text" id="destination" placeholder="Ville, zone hôtel ou lieu d'intérêt">
+                    </div>
+                </div>
+
+
+                <div class="date-input">
+                    <label for="departure-date">Date de départ</label>
+                    <div class="input-with-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon">
+                            <path fill-rule="evenodd"
+                                d="M4.5 6a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm7.5-1.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm7.5 1.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm-15 3a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm7.5-1.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm7.5 1.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM3 17.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75zM4.5 21a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm7.5-1.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm7.5 1.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <input type="date" id="departure-date" placeholder="selectionner une date">
+                    </div>
+                </div>
+
+                <div class="date-input">
+                    <label for="arrival-date">Date d'arrivée</label>
+                    <div class="input-with-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon">
+                            <path fill-rule="evenodd"
+                                d="M4.5 6a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm7.5-1.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm7.5 1.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm-15 3a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm7.5-1.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm7.5 1.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM3 17.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75zM4.5 21a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm7.5-1.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm7.5 1.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <input type="date" id="arrival-date" placeholder="selectionner une date">
+                    </div>
+                </div>
+
+
+
+                <div class="guests-input">
+                    <label for="guests">Voyageur</label>
+                    <div class="select-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon">
+                            <path fill-rule="evenodd"
+                                d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.121-1.707 3.828-3.828 3.828a1.5 1.5 0 01-1.5-1.5H9a1.5 1.5 0 01-1.5 1.5C5.457 14.328 3.75 12.621 3.75 10.5v-.75a6.75 6.75 0 011.5-1.5zm13.5 3a1.5 1.5 0 01-1.5 1.5h-3.75a.75.75 0 010-1.5h3a.75.75 0 00.75-.75V9a.75.75 0 00-.75-.75H15a.75.75 0 010-1.5h3.75a1.5 1.5 0 011.5 1.5v3zM6 12a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H6.75a.75.75 0 01-.75-.75V12z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <select id="guests">
+                            <option>1 adulte</option>
+                            <option>2 adultes</option>
+                            <option>+2 adultes</option>
+                            <option>1 enfant</option>
+                            <option>2 enfants</option>
+                            <option>+2 enfants</option>
+                            <option>adulte et enfant</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button class="search-button">Rechercher</button>
+        </div>
+
+
+
+        <section class="section">
+            <h3>Nos services</h3>
+            <ul>
+                <li>Réservations de vols</li>
+                <li>Services touristiques</li>
+                <li>Hébergement</li>
+                <li>Assistance visa</li>
+                <li>Assurance voyage</li>
+            </ul>
+        </section>
+
+
+        <section>
+            <h3>Voyagez avec style</h3>
+
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 VoyageFacile. Tous droits réservés.</p>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#">Mentions Légales</a></li>
+                    <li><a href="#">Politique de Confidentialité</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+
+</html>

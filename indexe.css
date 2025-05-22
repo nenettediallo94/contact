@@ -1,0 +1,304 @@
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Police de base */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f7fa;
+    color: #333;
+    background-image: url(istockphoto-873654064-1024x1024.jpg);
+    background-size: cover;
+}
+
+.search-bar-container {
+    display: flex;
+    justify-content: space-between;
+    /* Pour espacer les champs et le bouton */
+    align-items: center;
+    /* Aligne verticalement les éléments */
+    padding: 15px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-fields {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permet aux éléments de passer à la ligne si l'espace est insuffisant */
+    gap: 20px;
+    /* Espace entre les champs */
+    flex-grow: 1;
+    /* Permet aux champs de prendre l'espace disponible */
+}
+
+.search-input,
+.date-input,
+.guests-input {
+    display: flex;
+    flex-direction: column;
+    /* Retiré le margin-right car le gap gère l'espacement */
+    flex: 1;
+    /* Permet à chaque champ de prendre une part égale de l'espace disponible */
+    min-width: 150px;
+    /* Assure une largeur minimale pour éviter des rétrécissements excessifs */
+}
+
+.search-input label,
+.date-input label,
+.guests-input label {
+    font-size: 0.8em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.input-with-icon {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    height: 40px;
+    /* Fixe une hauteur pour tous les champs */
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    color: #777;
+    flex-shrink: 0;
+    /* Empêche l'icône de rétrécir */
+}
+
+.input-with-icon input[type="text"] {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    font-size: 1em;
+    padding: 0;
+    /* Réinitialise le padding par défaut des inputs */
+}
+
+.select-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    height: 40px;
+    /* Fixe une hauteur pour le select */
+}
+
+.select-wrapper select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    font-size: 1em;
+    padding-right: 25px;
+    /* Space for the arrow */
+    background-color: transparent;
+    /* Pour éviter un fond blanc sur le select */
+}
+
+.select-wrapper::after {
+    content: '\25BC';
+    /* Down arrow */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #777;
+    font-size: 0.8em;
+    pointer-events: none;
+}
+
+.search-button {
+    background-color: #ff7f50;
+    /* Couleur orange corail */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    /* Aligner verticalement au centre de search-bar-container */
+    height: 56px;
+    /* Ajuste la hauteur pour qu'elle corresponde aux champs */
+}
+
+.search-button:hover {
+    background-color: #e6734a;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+
+    /* Ajusté le breakpoint pour mieux s'adapter */
+    .search-bar-container {
+        flex-direction: column;
+        align-items: stretch;
+        /* Les éléments prennent toute la largeur */
+    }
+
+    .search-fields {
+        flex-direction: column;
+        /* Les champs s'empilent verticalement */
+        gap: 15px;
+        /* Espace entre les champs empilés */
+        margin-bottom: 15px;
+        /* Espace entre les champs et le bouton */
+    }
+
+    .search-input,
+    .date-input,
+    .guests-input {
+        min-width: unset;
+        /* Annule la largeur minimale en mode colonne */
+    }
+
+    .search-button {
+        width: 100%;
+        height: auto;
+        /* Laisse le bouton prendre sa hauteur naturelle avec le padding */
+    }
+}
+
+/* Navigation */
+header {
+    background-color: #08202c;
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+nav ul.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul.menu li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    transition: background 0.3s;
+}
+
+nav ul.menu li a:hover {
+    background-color: #003f5c;
+    border-radius: 5px;
+}
+
+/* Contenu principal */
+main {
+    width: 90%;
+    margin: 20px auto;
+}
+
+main section {
+    margin-bottom: 40px;
+}
+
+h2,
+h3 {
+    color: #00557f;
+    margin-bottom: 10px;
+}
+
+ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 6px;
+}
+
+
+
+/* Footer (peut être déplacé dans style.css ou un fichier commun) */
+.main-footer {
+    background-color: #08202c;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.main-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #ff7f50;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul.menu {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul.menu li {
+        margin-bottom: 10px;
+    }
+
+    section img {
+        width: 100%;
+    }
+}

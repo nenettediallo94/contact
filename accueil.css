@@ -6,6 +6,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background-image: url(photo-1500835556837-99ac94a94552.avif);
 }
 
 h1{
@@ -15,11 +16,12 @@ color: black;
 
 header{
 background-color: aquamarine;
+background: transparent;
 }
 
-.logo{
+header Image{
     font-size: 24px;
-    font-weight: bold;
+    margin-right: 50px;
 }
 
 .menu{
@@ -33,7 +35,7 @@ background-color: aquamarine;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: aquamarine;
+    background-color: rgb(185, 191, 216);
     color: grey;
 }
 
@@ -69,6 +71,7 @@ h1 {
     color: white;
     padding: 1cm;
     align-items: center;
+    background-color: transparent;
 
 }
 
@@ -84,14 +87,9 @@ h1 {
 }
 
 footer {
-    background-color: #46c7d8;
-    color: white;
-    padding: 10px;
-    align-items: center;
-    font-size: 25px;
-
-
-
+    background-color: #d6a96e;
+    margin-top: 15px;
+    
 
 }
 
