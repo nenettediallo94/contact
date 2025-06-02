@@ -1,0 +1,876 @@
+/* === Variables CSS globales === */
+:root {
+    --primary-color: #007bff; /* Bleu standard */
+    --secondary-color: #28a745; /* Vert standard */
+    --dark-color: #343a40; /* Gris foncé */
+    --light-color: #f8f9fa; /* Gris très clair */
+    --text-color: #333; /* Gris pour le texte principal */
+    --white-color: #fff; /* Blanc */
+    --font-family-primary: 'Montserrat', sans-serif;
+    --font-family-secondary: 'Georgia', serif;
+    --header-bg-color: #006400; /* Vert foncé pour l'arrière-plan du header */
+    --header-text-color: var(--white-color);
+    --header-hover-color: #FFD700; /* Or pour le survol du header */
+
+    /* Couleurs spécifiques à la page "Découvrir la Guinée" */
+    --decouvrir-h2-color: #00695C; /* Vert foncé */
+    --decouvrir-h3-color: #00897B; /* Vert moyen */
+    --decouvrir-border-color: #A7D977; /* Vert clair */
+    --decouvrir-text-soft: #555; /* Gris doux pour le texte */
+    --decouvrir-light-bg: #f9f9f9; /* Fond très clair pour les éléments régionaux */
+}
+
+/* === Reset === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-primary);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: rgb(251, 252, 250); /* Fond général du corps */
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-family-primary);
+    margin-bottom: 1rem;
+    color: brown; /* Couleur par default pour les titres (à ajuster si nécessaire) */
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+img {
+    width: 100%;
+    height: 100%; /* Ces propriétés sont génériques et pourraient être surchargées */
+    display: block;
+}
+
+/* === Utilitaires === */
+.section-padding {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section-description {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.bg-light {
+    background-color: var(--light-color);
+}
+
+.bg-dark {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+}
+
+.text-white {
+    color: var(--white-color);
+}
+
+.container { /* Ce conteneur peut être utilisé sur d'autres pages, mais 'main' est spécifique pour decouvrir.html */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* === Boutons === */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    border: none;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+.primary-btn:hover {
+    background-color: #0056b3;
+}
+
+.secondary-btn {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+}
+.secondary-btn:hover {
+    background-color: #218838;
+}
+
+.outline-btn {
+    background: transparent;
+    border: 2px solid var(--white-color);
+    color: var(--white-color);
+}
+.outline-btn:hover {
+    background-color: var(--white-color);
+    color: var(--dark-color);
+}
+
+.large-btn {
+    padding: 15px 35px;
+    font-size: 1.1rem;
+}
+
+/* === HEADER HERO (Général pour la page d'accueil ou page avec grand hero) === */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white-color);
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    min-height: 80vh; /* Ajusté pour laisser de la place au contenu en dessous si nécessaire */
+    object-fit: cover;
+    z-index: -2;
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.hero-content {
+    z-index: 1;
+    max-width: 900px;
+    padding: 20px;
+    position: relative;
+    top: 50px; /* Ajustement si le navbar prend de la place */
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: var(--white-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+.hero-content p {
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* === NAVBAR === */
+.navbar {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 40px;
+    /* Couleur de fond semi-transparente par défaut */
+    background: transparent;
+    /* Si vous utilisez un diaporama, réduisez l'opacité ici ou ajustez le background-color du .slideshow-background */
+    /* background-image: url('images/votre-image-de-fond-header.jpg'); /* Si vous voulez UNE SEULE image de fond */
+    /* background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center; */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    height: 70px;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Pour la transition au scroll */
+}
+
+/* Styles pour le diaporama en arrière-plan du header */
+.slideshow-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Cache les débordements des images */
+    z-index: -1; /* Place le fond derrière le contenu de la navbar */
+}
+
+.slideshow-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* Caché par défaut */
+    transition: opacity 1.5s ease-in-out; /* Transition douce */
+}
+
+.slideshow-background img.active {
+    opacity: 1; /* Affiche l'image active */
+}
+
+
+/* Couleur du header quand on scroll */
+.navbar-scrolled {
+    background-color: var(--header-bg-color); /* Utilise la couleur solide définie dans les variables */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
+    /* Si vous utilisez un diaporama et voulez qu'il disparaisse au scroll, ajoutez : */
+    /* background-image: none; */
+    /* background-color: var(--header-bg-color); */
+}
+
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+.ont-logo {
+    height: 50px;
+    margin-right: 20px;
+}
+.nav-links {
+    display: flex;
+    gap: 25px;
+    margin: 0 auto;
+    flex-grow: 1;
+    justify-content: center;
+    font-weight: 200;
+    list-style: none;
+}
+.nav-links > li {
+    position: relative;
+    padding: 10px 0;
+}
+.nav-links > li > a {
+    color: var(--header-text-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+}
+.nav-links > li > a:hover {
+    color: var(--header-hover-color);
+}
+
+/* Dropdown */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    /* Fond blanc avec 90% d'opacité */
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    min-width: 220px;
+    z-index: 10;
+    padding: 10px 0;
+}
+.dropdown li a {
+    padding: 10px 15px;
+    color: var(--text-color); /* Couleur du texte par défaut */
+    display: block;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.dropdown li a:hover {
+    /* Couleur de survol distinctive et texte blanc */
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+.nav-links > li:hover .dropdown {
+    display: block;
+}
+
+/* Langues & recherche */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.search-icon {
+    color: var(--header-text-color);
+    font-size: 1.2rem;
+}
+.search-icon:hover {
+    color: var(--header-hover-color);
+}
+.language-selector select {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 10px;
+    font-size: 0.9rem;
+    color: var(--header-text-color);
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M2%204l4%204%204-4H2z%22%2F%3E%3C%2Fsvg%3E'); /* flèche custom blanche pour select */
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 12px;
+    padding-right: 30px;
+    -webkit-appearance: none; /* Supprime l'apparence par défaut du select sur WebKit */
+    -moz-appearance: none; /* Supprime l'apparence par défaut sur Firefox */
+    appearance: none; /* Supprime l'apparence par défaut */
+}
+/* Style pour les options du select */
+.language-selector select option {
+    color: var(--text-color); /* Texte des options en noir */
+    background-color: var(--white-color); /* Fond des options en blanc */
+}
+
+
+/* Burger Menu */
+.burger-menu {
+    display: none; /* Caché par défaut, affiché sur mobile */
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--header-text-color);
+    margin-left: 20px;
+}
+
+/* === SECTIONS DÉFILANTES (pour la page d'accueil par exemple) === */
+
+/* Section "Découvrir" sur la page d'accueil */
+.decouvrir-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 20px 0;
+}
+.decouvrir-card {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+    background-color: var(--white-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.decouvrir-card img {
+    height: 180px;
+    object-fit: cover;
+}
+.decouvrir-card h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+.decouvrir-card p {
+    font-size: 0.9rem;
+    color: #555;
+    padding: 0 15px 15px;
+}
+
+/* Section "Destinations" */
+.destination-wrapper,
+.sejourner-wrapper,
+.gastronomie-wrapper {
+    position: relative;
+}
+.destination-scroll,
+.sejourner-scroll,
+.gastronomie-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 20px 10px;
+}
+.destination-card,
+.sejour-card,
+.plat {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+    background-color: var(--white-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.destination-card:hover,
+.sejour-card:hover,
+.plat:hover {
+    transform: translateY(-5px);
+}
+.destination-card img,
+.sejour-card img,
+.plat img {
+    height: 180px;
+    object-fit: cover;
+}
+.destination-card h3,
+.sejour-card h3,
+.plat h3 {
+    color: var(--primary-color);
+    margin: 15px 0 10px;
+}
+.destination-card p,
+.sejour-card p,
+.plat p {
+    font-size: 0.9rem;
+    color: #555;
+    padding: 0 15px 15px;
+}
+
+/* Flèches défilement */
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0.85;
+}
+.scroll-btn.left { left: -10px; }
+.scroll-btn.right { right: -10px; }
+.scroll-btn:hover { background-color: #0056b3; }
+
+/* Culture */
+.culture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.culture-item {
+    background-color: var(--white-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    padding-bottom: 20px;
+}
+.culture-item img {
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Témoignages */
+.testimonial-slider {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 30px 0 60px;
+}
+.testimonial-card {
+    background-color: var(--light-color);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 450px;
+}
+.testimonial-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* Faits */
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.fact-item {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 40px 20px;
+    font-size: 0.9rem;
+}
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+.footer-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    color: #aaa;
+}
+.footer-section.social a {
+    color: var(--white-color);
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-section.social a:hover {
+    color: var(--primary-color);
+}
+
+/* === RESPONSIVITÉ GÉNÉRALE (commence ici, applique à toutes les pages) === */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 70%;
+        height: 100vh;
+        background-color: var(--dark-color);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 99;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-links.nav-active {
+        transform: translateX(0%);
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* === STYLES SPÉCIFIQUES À LA PAGE "DÉCOUVRIR LA GUINÉE" (decouvrirlaguinee.html) === */
+
+/* Overrides et styles spécifiques pour la page "Découvrir" */
+/* Note: Si vous utilisez un hero différent sur cette page, assurez-vous de bien lui donner la classe 'hero-page' */
+.hero-page {
+    /* Utilise la même structure que .hero, mais peut avoir une image différente ou un contenu plus court */
+    position: relative;
+    height: 400px; /* Hauteur réduite pour une page de contenu */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    background: url('images/hero_decouvrir.jpg') no-repeat center center/cover; /* Chemin de l'image de couverture */
+    margin-bottom: 30px;
+}
+
+.hero-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-page h1 {
+    font-size: 3.2em;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+    line-height: 1.2;
+    color: var(--white-color); /* S'assurer que le titre est blanc sur le hero */
+}
+
+/* Conteneur principal pour le contenu de la page "Découvrir" */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Styles pour les sections de contenu (Histoire, Climat, Nature) */
+.content-section {
+    padding: 40px 0;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 30px;
+}
+
+.content-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.content-section h2 {
+    color: var(--decouvrir-h2-color); /* Utilise la variable verte */
+    font-size: 2.5em;
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--decouvrir-border-color); /* Utilise la variable verte claire */
+    text-align: center;
+    font-weight: 700;
+}
+
+.content-section h3 {
+    color: var(--decouvrir-h3-color); /* Utilise la variable verte */
+    font-size: 1.8em;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.content-section p {
+    line-height: 1.8;
+    margin-bottom: 1.2em;
+    color: var(--decouvrir-text-soft); /* Utilise la variable grise douce */
+}
+
+.content-section ul {
+    list-style: disc;
+    margin-left: 25px;
+    margin-bottom: 1.5em;
+    padding: 0;
+}
+
+.content-section ul li {
+    margin-bottom: 0.8em;
+    line-height: 1.6;
+    color: #444;
+}
+
+.content-section ul ul {
+    list-style: circle;
+    margin-top: 0.5em;
+    margin-left: 20px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+/* --- Styles pour la mise en page Texte-Image --- */
+.section-content-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.text-content {
+    flex: 2;
+    min-width: 300px;
+}
+
+.image-content {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.image-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Règle pour inverser l'ordre des éléments (texte à gauche, image à droite) */
+.section-content-wrapper.reversed-layout {
+    flex-direction: row-reverse;
+}
+
+/* --- Styles Généraux pour les titres et paragraphes (déjà présents) --- */
+h2 {
+    color: var(--decouvrir-h2-color); /* Assurez-vous que cette variable est définie */
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h3 {
+    color: var(--decouvrir-h3-color); /* Assurez-vous que cette variable est définie */
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+h4 {
+    color: var(--decouvrir-h4-color); /* Assurez-vous que cette variable est définie */
+    margin-bottom: 15px;
+}
+
+p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* --- Styles pour la grille des Variances Régionales (Climat) --- */
+.regional-variance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.regional-item {
+    background-color: var(--decouvrir-light-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.regional-item h4 {
+    color: var(--decouvrir-h3-color); /* Utilise la variable verte */
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.regional-item img {
+    max-width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.regional-item p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* --- Média Queries pour la Responsivité Spécifique à "Découvrir la Guinée" --- */
+/* Ces règles surchargent celles génériques si nécessaires, pour la page decouvrir.html */
+@media (max-width: 992px) {
+    .section-content-wrapper {
+        flex-direction: column; /* Sur les écrans plus petits, les éléments s'empilent verticalement */
+        align-items: center;
+        gap: 30px;
+    }
+    .text-content, .image-content {
+        flex: none; /* Les éléments ne prennent plus une proportion fixe, mais leur largeur normale */
+        width: 100%; /* Ils prennent toute la largeur disponible */
+        min-width: unset; /* Réinitialise le min-width */
+    }
+    .image-content img {
+        max-height: 400px;
+        width: auto; /* Permet à l'image de s'adapter tout en conservant son ratio */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-page {
+        padding: 80px 15px;
+        min-height: 250px;
+        height: auto; /* Permet à la hauteur de s'ajuster si le contenu du titre est long */
+    }
+    .hero-page h1 {
+        font-size: 2.2em;
+    }
+    main {
+        padding: 20px;
+        margin: 10px auto;
+    }
+    .content-section {
+        padding: 25px 0;
+        margin-bottom: 20px;
+    }
+    .content-section h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+    }
+    .content-section h3 {
+        font-size: 1.5em;
+        margin-top: 25px;
+    }
+    .regional-item img {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-page {
+        padding: 60px 10px;
+        min-height: 200px;
+    }
+    .hero-page h1 {
+        font-size: 1.8em;
+    }
+    main {
+        padding: 15px;
+    }
+    .content-section {
+        padding: 20px 0;
+        margin-bottom: 15px;
+    }
+    .content-section h2 {
+        font-size: 1.8em;
+    }
+    .content-section h3 {
+        font-size: 1.3em;
+    }
+    .regional-variance-grid {
+        gap: 20px;
+    }
+}
+

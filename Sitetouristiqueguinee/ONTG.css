@@ -24,7 +24,7 @@ body {
     font-family: var(--font-family-primary);
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--white-color);
+    background-color: rgb(214, 212, 176);
     overflow-x: hidden; /* Empêche le défilement horizontal non désiré */
 }
 
@@ -48,7 +48,8 @@ p {
 }
 
 img {
-    width: 100%;
+/* padding-bottom: 12px; */
+     width: 100%; 
     height: 100%;
     display: block; /* Supprime l'espace sous les images */
 
@@ -310,6 +311,7 @@ img {
     appearance: none; /* Cache la flèche par défaut du select */
     background-image: url('data:image/svg+xml;charset=US-8859-1,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-6.5%200-12.3%203.2-16.2%208.5a17.6%2017.6%200%200%0%200-3.6%2014.5c0%206.9%203.7%2013%2010%2016.2l128.8%20127.9c3.7%203.6%208.5%205.4%2013.2%205.4s9.5-1.8%2013.2-5.4L287%20106.6c6.3-3.2%2010-9.3%2010-16.2%200-6.9-3.7-13-10-16.2z%22%2F%3E%3C%2Fsvg%3E'); /* Flèche personnalisée */
     background-repeat: no-repeat;
+    
     background-position: right 8px center;
     background-size: 12px;
     padding-right: 30px; /* Espace pour la flèche */
@@ -329,15 +331,115 @@ img {
     margin-left: 20px; /* Espace par rapport aux icônes de droite */
 }
 
+.decouvrir-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 20px 0;
+}
+
+.decouvrir-card {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+    background-color: var(--white-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.decouvrir-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.decouvrir-card h3 {
+    margin: 15px 0 5px;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.decouvrir-card p {
+    font-size: 0.9rem;
+    padding: 0 15px 15px;
+    color: #555;
+}
+
+.decouvrir-card .btn {
+    margin-bottom: 15px;
+}
+
 
 /* Destinations Grid */
-.destination-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
+.destination-wrapper {
+    position: relative;
 }
+
+.destination-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 10px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.destination-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+.destination-scroll::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+.destination-card {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+    background-color: var(--white-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.destination-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 8px 12px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 5px;
+    opacity: 0.85;
+}
+
+.scroll-btn:hover {
+    background-color: #0056b3;
+}
+
+.scroll-btn.left {
+    left: -10px;
+}
+
+.scroll-btn.right {
+    right: -10px;
+}
+
 
 .destination-card {
     background-color: var(--white-color);
@@ -376,6 +478,47 @@ img {
     text-align: center;
 }
 
+.sejourner-wrapper {
+    position: relative;
+}
+
+.sejourner-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 20px 0;
+}
+
+.sejour-card {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+    background-color: var(--white-color);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+}
+
+.sejour-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.sejour-card h3 {
+    margin: 15px 0 10px;
+    color: var(--primary-color);
+}
+
+.sejour-card p {
+    font-size: 0.9rem;
+    color: #555;
+    padding: 0 15px 15px;
+}
+
+
 /* Culture Grid */
 .culture-grid {
     display: grid;
@@ -410,6 +553,174 @@ img {
     font-size: 0.9rem;
     color: #666;
     padding: 0 15px;
+}
+
+/* === Section Gastronomie === */
+
+.gastronomie-wrapper {
+    position: relative;
+}
+
+.gastronomie-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 20px 10px;
+}
+
+.gastronomie-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+.gastronomie-scroll::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+.plat {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+    background-color: var(--white-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.plat img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 8px 12px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 5px;
+    opacity: 0.85;
+}
+
+.scroll-btn:hover {
+    background-color: #0056b3;
+}
+
+.scroll-btn.left {
+    left: -10px;
+}
+
+.scroll-btn.right {
+    right: -10px;
+}
+
+
+.plat {
+    max-width: 350px;
+    background-color: var(--white-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.plat:hover {
+    transform: translateY(-5px);
+}
+
+.plat img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 4px solid var(--primary-color);
+}
+
+.plat h3 {
+    font-size: 1.3rem;
+    margin: 15px 0 10px;
+    color: var(--primary-color);
+}
+
+.plat p {
+    font-size: 0.95rem;
+    color: #555;
+    padding: 0 15px 20px;
+}
+
+/* Badge spécial pour plat emblématique (facultatif) */
+.plat .badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+
+/* === Histoire & Géographie / Climat & Saison === */
+
+
+
+/* Climat Grid */
+.climate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.climate-card {
+    background-color: var(--white-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.climate:hover {
+    transform: translateY(-10px);
+}
+
+.climate-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.climate-card h3 {
+    margin: 15px 15px 5px;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+}
+
+.climate-card p {
+    margin: 0 15px 15px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.climate-card .btn {
+    margin: 0 15px 15px;
+    width: calc(100% - 30px);
+    text-align: center;
 }
 
 /* Testimonial Slider (simplifié pour l'exemple) */
